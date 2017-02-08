@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = (ImageView) findViewById(R.id.ivImage);
-        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.interpolator);
+        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slidedown);
         imageView.startAnimation(animation);
 
         animation.setAnimationListener(new Animation.AnimationListener() {
