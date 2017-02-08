@@ -20,5 +20,6 @@ public class ContentActivity extends AppCompatActivity {
 
         AnimationDrawable frameAnimation = (AnimationDrawable) imageView.getBackground();
         frameAnimation.start();
+        // TODO Add mp3 sound
     }
 }
