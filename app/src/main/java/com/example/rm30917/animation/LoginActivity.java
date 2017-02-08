@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    private Animation shakeAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.edtUsername);
         password = (EditText) findViewById(R.id.edtPassword);
+        shakeAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.translate);
     }
 
     public void signIn(View v){
@@ -25,7 +29,8 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ContentActivity.class);
             startActivity(intent);
         } else {
-            // TODO Shake animation
+            username.startAnimation(shakeAnimation);
+            password.startAnimation(shakeAnimation);
         }
     }
 }
